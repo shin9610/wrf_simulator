@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    image: wrf
+    container_name: wrf
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+     - "80:8080"
+     - "443:8080"
+     - "9000:8080"
+  #   build: .
+  #   container_name: fortran
+  #   volumes:
+  #     - .:/home/fortran”
+  #   tty: true
+
+volumes:
+  dummy_volume: null
