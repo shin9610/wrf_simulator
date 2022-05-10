@@ -11,5 +11,20 @@ RUN apt install -y libpng-dev
 RUN apt install -y ncl-ncarg
 
 WORKDIR /usr/local/wrf_simulator
-COPY WPS/ ./WPS
-COPY WRF/ ./WRF
+
+# install netCDF
+# - install zlib
+WORKDIR /usr/local/wrf_simulator
+COPY zlib-1.2.12/ ./zlib-1.2.12
+WORKDIR /usr/local/wrf_simulator/zlib-1.2.12
+# RUN ./configure
+# RUN make
+# RUN make install
+
+# - install szip
+WORKDIR /usr/local/wrf_simulator
+COPY 
+
+# install WRF WPS
+# COPY WPS/ ./WPS
+# COPY WRF/ ./WRF
